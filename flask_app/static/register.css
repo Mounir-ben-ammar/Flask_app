@@ -1,0 +1,287 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #1a1a1a;
+  color: #f4f4f9;
+  text-align: center;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Background Image */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../static/images/banner_landing_page.jpg') no-repeat center center/cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6a11cb;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #f4f4f9;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6a11cb;
+  transition: width 0.3s;
+}
+
+.nav-link:hover {
+  color: #6a11cb;
+  transform: scale(1.1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-login {
+  background: #6a11cb;
+  color: white;
+}
+
+.btn-signup {
+  background: #2575fc;
+  color: white;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  transform: translateY(-3px);
+}
+
+.dark-mode-toggle {
+  margin-left: 20px;
+}
+
+#dark-mode-toggle {
+  display: none;
+}
+
+#dark-mode-toggle + label {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#dark-mode-toggle + label::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+#dark-mode-toggle:checked + label {
+  background: #6a11cb;
+}
+
+#dark-mode-toggle:checked + label::after {
+  transform: translateX(20px);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background-image: ../static/images/banner_landing_page.jpg;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+
+.btn-primary {
+  background: #6a11cb;
+  color: white;
+}
+
+.btn-secondary {
+  background: #2575fc;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+/* Features Section */
+.features {
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+}
+
+.quick-links,
+.legal,
+.social-media {
+  margin-bottom: 10px;
+}
+
+.quick-links a,
+.legal a,
+.social-media a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.quick-links a:hover,
+.legal a:hover,
+.social-media a:hover {
+  text-decoration: underline;
+}
